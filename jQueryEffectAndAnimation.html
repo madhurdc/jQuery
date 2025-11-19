@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+    crossorigin="anonymous"></script>
+    <title>jQuery Practice</title>
+    <style>
+        body {
+            padding: 5px;
+        }
+        header {
+            text-align: center;
+            background: rgb(57, 57, 57);
+            padding: 10px;
+            color: white;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 10px;
+        }
+        h1 {
+            font-family: arial, sans-serif;
+        }
+        .myClass {
+            color: blue;
+            background: black;
+        }
+        #box{
+            background: #333;
+            color: white;
+            width: 500px;
+            height: 90px;
+            padding: 40px;
+            text-align: center;
+        }
+        #box2{
+            background: red;
+            color: white;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>jQuery Practice | Effects & Animate</h1>
+    </header>
+    <div class="container">
+        <button id="fadeOut">Fade Out</button>
+        <button id="fadeIn">Fade In</button>
+        <button id="fadeToggle">Fade Toggle</button>
+        <hr>
+
+        <button id="slideUp">Slide Up</button>
+        <button id="slideDown">Slide Down</button>
+        <button id="slideTog">Slide Toggle</button>
+        <button id="stop">Stop</button>
+        <hr>
+
+        <div id="box"><h1>Hello World</h1></div>
+        <hr>
+        <button id="moveLeft">Move Left</button>
+        <button id="moveRight">Move Right</button>
+        <button id="moveAround">Move Around</button>
+        <hr>
+        <div id="box2"></div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            /* Fade Effects*/
+            // $('#fadeOut').click(function(){
+            //     $('#box').fadeOut(3000, function(){
+            //         $('#fadeOut').text('Its gone')
+            //     });
+            // });
+            // $('#fadeIn').click(function(){
+            //     $('#box').fadeIn(3000);
+            // });
+            // $('#fadeToggle').click(function(){
+            //     $('#box').fadeToggle(500);
+            // });
+
+            /* Slide Effects*/
+            $('#slideUp').click(function(){
+                $('#box').slideUp(3000, function(){
+                    $('#fadeOut').text('Its gone')
+                });
+            });
+            $('#slideDown').click(function(){
+                $('#box').slideDown(3000);
+            });
+            $('#slideTog').click(function(){
+                $('#box').slideToggle(500);
+            });
+            $('#stop').click(function(){
+                $('#box').stop();
+            });
+
+            /* Animate */
+            $('#moveRight').click(function(){
+                $('#box2').animate({
+                    left: 500,
+                    height: '300px',
+                    width: '300px',
+                    opacity: '0.5'
+                });
+            });
+            $('#moveLeft').click(function(){
+                $('#box2').animate({
+                    left: 0,
+                    height: '100px',
+                    width: '100px',
+                    opacity: '1'
+                });
+            });
+            $('#moveAround').click(function(){
+                let box = $('#box2');
+                box.animate({
+                    left: 300
+                })
+                box.animate({
+                    top: 300
+                })
+                box.animate({
+                    left: 0,
+                    top: 300
+                })
+                box.animate({
+                    left: 0,
+                    top: 0
+                })
+            });
+        })
+    </script>
+</body>
+</html>

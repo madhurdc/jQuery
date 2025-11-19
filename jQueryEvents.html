@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+    crossorigin="anonymous"></script>
+    <title>jQuery Practice</title>
+    <style>
+        body {
+            padding: 5px;
+        }
+        header {
+            text-align: center;
+            background: rgb(57, 57, 57);
+            padding: 10px;
+            color: white;
+        }
+        h1 {
+            font-family: arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>jQuery Practice | Events</h1>
+    </header>
+    <div class="container">
+        <h3>Mouse Events</h3>
+        <button id="btn1" class="btnClass">Button 1</button>
+        <button id="btn2">Button 2</button>
+        <p class="para1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+            Iusto, ipsa. Lorem ipsum dolor sit amet.</p>
+        <!-- <h1 id="coords"></h1> -->
+        <hr>
+        <form action="" id="form">
+            <label>Name</label><br>
+            <input type="text" id="name" name="name">
+            <br>
+            <label>Email</label><br>
+            <input type="text" id="email" name="email">
+            <br>
+            <label>Gender</label><br>
+            <select name="gender" id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>   
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            // $('#btn1').click(function(){
+            //         alert("Button clicked")
+            // })
+            // Works same as above
+            // $('#btn1').on('click', function(){
+            //     alert('Btn Clicked')
+            // })
+            // $('#btn1').click(function(){
+            //         //$('.para1').hide();
+            //         $('.para1').toggle();
+            // })
+            // $('#btn2').click(function(){
+            //         $('.para1').show();
+            // })
+            // $('#btn1').dblclick(function(){
+            //     $('.para1').toggle()
+            // })
+            // $('#btn1').hover(function(){
+            //     $('.para1').toggle()
+            // })
+            // Hover does mouseenter adn mouseleave at the same time
+            // $('#btn1').on('mouseenter', function(){
+            //     $('.para1').toggle()
+            // })
+            // $('#btn1').on('mouseleave', function(){
+            //     $('.para1').toggle()
+            // })
+            // $('#btn1').on('mousemove', function(){
+            //     $('.para1').toggle()
+            // })
+            // $('#btn1').on('mousedown', function(){
+            //     $('.para1').toggle()
+            // })
+            // $('#btn1').on('mouseup', function(){
+            //     $('.para1').toggle()
+            // })
+            // $('#btn1').click(function(e){
+            //         alert(e.currentTarget.id);
+            //         alert(e.currentTarget.innerHTML);
+            //         alert(e.currentTarget.outerHTML);
+            //         alert(e.currentTarget.className);
+            // })
+            // $(document).on('mousemove', function(e){
+            //     $('#coords').html('Coords: Y:' + e.clientY + " X: " + e.clientX);
+            // });
+            // $('input').focus(function(){
+            //     $(this).css('background', 'pink');
+            // });
+            // $('input').blur(function(){
+            //     $(this).css('background', 'white');
+            // });
+            // $('input').keyup(function(e){
+            //     console.log(e.target.value);
+            // });
+            // $('select#gender').change(function(e) {
+            //     alert(e.target.value);
+            // })
+            $('#form').submit(function(e){
+                e.preventDefault();
+                let name = $('input#name').val();
+                console.log(name);
+            })
+        })
+    </script>
+</body>
+</html>
